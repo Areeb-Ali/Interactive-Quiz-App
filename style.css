@@ -24,14 +24,17 @@ body {
     border-bottom: 1px solid black;
     padding-bottom: 30px;
 }
-.quiz{
+
+.quiz {
     padding: 20px 0;
 }
+
 .quiz h2 {
     font-size: 18px;
     font-weight: 600;
 }
-.btn{
+
+.btn {
     background-color: #CAF0F8;
     font-weight: 600;
     width: 100%;
@@ -41,5 +44,23 @@ body {
     text-align: left;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s;
+}
 
+.btn:hover {
+    background-color: black;
+    color: #CAF0F8;
+}
+
+#next-btn {
+    background-color: black;
+    color: #CAF0F8;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    margin: 20px auto 0;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
 }
