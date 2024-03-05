@@ -129,59 +129,128 @@ const questions = [
       { text: "delete(element)", correct: false },
       { text: "hide(element)", correct: false },
     ],
-  }, 
+  },
   {
-    question: "Which event listener is triggered when a user clicks on an element?",
+    question:
+      "Which event listener is triggered when a user clicks on an element?",
     answers: [
-        { text: "onclick", correct: true },
-        { text: "onchange", correct: false },
-        { text: "onmouseover", correct: false },
-        { text: "onsubmit", correct: false }
-    ]
-},
-{
+      { text: "onclick", correct: true },
+      { text: "onchange", correct: false },
+      { text: "onmouseover", correct: false },
+      { text: "onsubmit", correct: false },
+    ],
+  },
+  {
     question: "Which operator is used for logical AND in JavaScript?",
     answers: [
-        { text: "&&", correct: true },
-        { text: "||", correct: false },
-        { text: "!=", correct: false },
-        { text: "<", correct: false }
-    ]
-},
-{
+      { text: "&&", correct: true },
+      { text: "||", correct: false },
+      { text: "!=", correct: false },
+      { text: "<", correct: false },
+    ],
+  },
+  {
     question: "What data type can store a single character in JavaScript?",
     answers: [
-        { text: "string", correct: true },
-        { text: "number", correct: false },
-        { text: "boolean", correct: false },
-        { text: "object", correct: false }
-    ]
-},
-{
+      { text: "string", correct: true },
+      { text: "number", correct: false },
+      { text: "boolean", correct: false },
+      { text: "object", correct: false },
+    ],
+  },
+  {
     question: "Which keyword is used to define a function in JavaScript?",
     answers: [
-        { text: "function", correct: true },
-        { text: "var", correct: false },
-        { text: "const", correct: false },
-        { text: "let", correct: false }
-    ]
-},
-{
-    question: "What is the difference between `innerHTML` and `textContent` when manipulating DOM elements?",
+      { text: "function", correct: true },
+      { text: "var", correct: false },
+      { text: "const", correct: false },
+      { text: "let", correct: false },
+    ],
+  },
+  {
+    question:
+      "What is the difference between `innerHTML` and `textContent` when manipulating DOM elements?",
     answers: [
-        { text: "innerHTML sets the HTML content, while textContent sets the text content only (excluding HTML tags).", correct: true },
-        { text: "They are the same and can be used interchangeably.", correct: false },
-        { text: "innerHTML is faster, while textContent is slower.", correct: false },
-        { text: "innerHTML is used for modifying styles, while textContent is used for text.", correct: false }
-    ]
-},
-{
-    question: "What is the correct way to create a new element (e.g., paragraph) and append it to the body in the DOM?",
+      {
+        text: "innerHTML sets the HTML content, while textContent sets the text content only (excluding HTML tags).",
+        correct: true,
+      },
+      {
+        text: "They are the same and can be used interchangeably.",
+        correct: false,
+      },
+      {
+        text: "innerHTML is faster, while textContent is slower.",
+        correct: false,
+      },
+      {
+        text: "innerHTML is used for modifying styles, while textContent is used for text.",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question:
+      "What is the correct way to create a new element (e.g., paragraph) and append it to the body in the DOM?",
     answers: [
-        { text: `const paragraph = document.createElement('p'); document.body.appendChild(paragraph);`, correct: true },
-        { text: `let p = new Element('p'); document.body.add(p);`, correct: false },
-        { text: `paragraph.create('p'); document.body.insert(paragraph);`, correct: false },
-        { text: `document.body.addParagraph('New paragraph');`, correct: false }
-    ]
-},
+      {
+        text: `const paragraph = document.createElement('p'); document.body.appendChild(paragraph);`,
+        correct: true,
+      },
+      {
+        text: `let p = new Element('p'); document.body.add(p);`,
+        correct: false,
+      },
+      {
+        text: `paragraph.create('p'); document.body.insert(paragraph);`,
+        correct: false,
+      },
+      { text: `document.body.addParagraph('New paragraph');`, correct: false },
+    ],
+  },
+  {
+    question: "What does the `else if` statement do in a conditional block?",
+    answers: [
+      {
+        text: "Checks a new condition if the previous `if` condition was false",
+        correct: true,
+      },
+      {
+        text: "Executes code if all previous conditions were false",
+        correct: false,
+      },
+      { text: "Ends the conditional block", correct: false },
+      { text: "Repeats the previous `if` condition", correct: false },
+    ],
+  },
+  {
+    question: "How can you add a class to an element using DOM manipulation?",
+    answers: [
+      { text: `element.classList.add('class-name');`, correct: true },
+      { text: `element.className = 'class-name';`, correct: false },
+      { text: `element.setAttribute('class', 'class-name');`, correct: false },
+      { text: `element.addClass('class-name');`, correct: false },
+    ],
+  },
 ];
+const questionElement = document.getElementById("question");
+const answerButton = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuize() {
+  currentQuestionIndex = 0;
+  let score = 0;
+  nextButton.innerHTML = "Next";
+  showQuestion();
+}
+
+function showQuestion() {
+  let currentQuestion = question[currentQuestionIndex];
+  let questionNo = currentQuestionIndex + 1;
+  questionElement.innerHTML; = questionNo + ". " + currentQuestion.question;
+
+  
+}
